@@ -74,16 +74,14 @@ h1 {
 }
 .wrpa {
   @include for-desktop{
-    padding-top: 130px;
+    padding-top: 4vh;
     display: flex;
     width: 95vw;
     max-width: 1300px;
     margin: 0 auto;
-    // margin-left: 15%;
   }
 }
 .try-it-now-header {
-  // margin-top: 177px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -93,13 +91,6 @@ h1 {
   @include for-desktop {
     max-width: 600px;
     margin-top: 30px;
-    div {
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: flex-start;
-      // max-width: 870px;
-    }
   }
   p {
     display: none;

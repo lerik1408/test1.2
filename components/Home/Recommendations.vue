@@ -1,7 +1,29 @@
 <template>
   <div class="conteiner">
     <section class="info">
-      <h3 class="info-headline">Trusted by 800+ agencies and blogers, featured at:</h3>
+      <div class="info-platform">
+        <h3 class="info-headline">Trusted by 800+ agencies and blogers, featured at:</h3>
+        <div class="companies">
+          <div class="companies-item twitch">
+              
+          </div>
+          <div class="companies-item hulu">
+              
+          </div>
+          <div class="companies-item primevideo">
+              
+          </div>
+          <div class="companies-item sling">
+              
+          </div>
+          <div class="companies-item xbox">
+              
+          </div>
+          <div class="companies-item youtube">
+              
+          </div>
+        </div>
+      </div>
       <div class="social">
         <div class="google">
         </div>
@@ -162,11 +184,50 @@ export default{
   @include for-desktop {
     flex-direction: row;
   }
-  .info-headline {
-    font-weight: 800;
-    font-size: 24px;
-    @include for-mobile {
-      width: 80%;
+  .info-platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .info-headline {
+      font-weight: 800;
+      font-size: 24px;
+      @include for-mobile {
+        width: 80%;
+      }
+    }
+    .companies {
+      display: flex;
+      justify-content: center;
+      height: 60px;
+      @include for-mobile {
+        flex-wrap: wrap;
+        margin-bottom: 100px
+      }
+      .companies-item {
+        width: 76px;
+        height: 60px;
+        margin-left: 20px;
+        flex-basis: 33%;
+      }
+      .twitch {
+        background: url("~@/assets/img/twitch.png") no-repeat center;
+        margin-left: 0px;
+      }
+      .hulu {
+        background: url("~@/assets/img/hulu.png") no-repeat center;
+      }
+      .primevideo {
+        background: url("~@/assets/img/primevideo.png") no-repeat center;
+      }
+      .sling {
+        background: url("~@/assets/img/sling.png") no-repeat center;
+      }
+      .xbox {
+        background: url("~@/assets/img/xbox.png") no-repeat center;
+      }
+      .youtube {
+        background: url("~@/assets/img/youtube.png") no-repeat center;
+      }
     }
   }
   .social {

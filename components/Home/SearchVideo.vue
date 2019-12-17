@@ -72,7 +72,7 @@
     width: 226px;
   }
   @include for-desktop {
-    margin-top: 20px;
+    margin-top: 9px;
   }
 }
 .search-video-input {

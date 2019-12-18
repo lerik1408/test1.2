@@ -2,7 +2,7 @@
     <main class="main">
         <Recommendations />
         <HowItWorksNew/>
-
+        <Better/>
         <WhoIsWorking/>
         <bright-effect class="bright-effect"/>
         <SprizzyIsForYou/>
@@ -35,6 +35,7 @@
     import SprizzyIsForYou from "./SprizzyIsForYou.vue";
     import TryItNow from "@/components/Home/TryItNow.vue";
     import ContentFaq from "@/components/_shared/ContentFaq.vue";
+    import Better from "./Better.vue";
 
     export default {
         components: {
@@ -46,7 +47,8 @@
             Benefits,
             SprizzyIsForYou,
             TryItNow,
-            ContentFaq
+            ContentFaq,
+            Better,
         },
         props:{
             questionAnswers: Array

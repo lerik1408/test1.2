@@ -58,32 +58,34 @@
         paginationColor="#E8EAF4"
         paginationActiveColor="#649DFB"
         :loop="true"
-        :autoplay="true"
+        :autoplay="false"
         :autoplayHoverPause="true"
         :speed="2000"
         :autoplayTimeout="4000"
         :paginationPadding="4"
         :paginationSize="17"
         :scrollPerPage="true"
-        :perPageCustom="[[300, 1], [600, 2], [1366, 4]]"
+        :perPageCustom="[[300, 1], [700, 2], [1366, 4]]"
       >
       <slide v-for="item in data" :key="item.id" class="slide">
-        <div class="slide-content">
-          <div class="slide-wrap">
-            <img :src="item.img" alt="user photo" class="slide-photo">
-            <div class="text">
-              <p class="text-name">{{item.name}}</p>
-              <p class="text-time">{{item.time}}</p>
-              <p class="text-text">{{item.text}}</p>
+        <div class="slide-padding">
+          <div class="slide-content">
+            <div class="slide-wrap">
+              <img :src="item.img" alt="user photo" class="slide-photo">
+              <div class="text">
+                <p class="text-name">{{item.name}}</p>
+                <p class="text-time">{{item.time}}</p>
+                <p class="text-text">{{item.text}}</p>
+              </div>
             </div>
-          </div>
-          <div class="slide-control">
-            <p>{{item.comments}}</p>
-            <IconComments />
-            <IconMore />
-          </div>
-          <div class="slide-youtube">
-            View on <IconYoutube class="slide-youtube--icon"/>Youtube
+            <div class="slide-control">
+              <p>{{item.comments}}</p>
+              <IconComments />
+              <IconMore />
+            </div>
+            <div class="slide-youtube">
+              View on <IconYoutube class="slide-youtube--icon"/>Youtube
+            </div>
           </div>
         </div>
       </slide>
@@ -281,7 +283,7 @@ export default{
     border-radius: 107px 0 0 107px;
     @include for-mobile{
       width: 90%;
-      height: 400px;
+      height: 350px;
     }
     @include for-desktop {
       padding-top: 85px;
@@ -311,12 +313,12 @@ export default{
 }
 .carousel {
   top: -100px;
-  .slide {
-    width: 540px;
+  .slide-padding {
     height: 190px;
     border-radius: 20px;
     box-shadow: 0px 10px 40px rgba(22, 34, 78, 0.06);
-    margin-left: 20px;
+    margin: 0 10px;
+    box-sizing: border-box;
     margin-bottom: 20px;
     .slide-content{
       padding: 25px 35px;
@@ -362,7 +364,9 @@ export default{
     }
   }
   @include for-mobile{
-    top: -30px;
+    top: 10px;
+    width: 90%;
+    margin: 0 auto;
   }
   @include for-tablet {
     top: 50px;

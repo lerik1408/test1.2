@@ -58,7 +58,7 @@
         paginationColor="#E8EAF4"
         paginationActiveColor="#649DFB"
         :loop="true"
-        :autoplay="false"
+        :autoplay="true"
         :autoplayHoverPause="true"
         :speed="2000"
         :autoplayTimeout="4000"

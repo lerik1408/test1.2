@@ -316,9 +316,18 @@ export default{
   .slide-padding {
     height: 190px;
     border-radius: 20px;
-    box-shadow: 0px 10px 40px rgba(22, 34, 78, 0.06);
+    box-shadow: 0px 0px 6px 5px rgba(22, 34, 78, 0.06);
     margin: 10px 10px;
     box-sizing: border-box;
+    @include for-mobile {
+      margin-bottom: 20px;
+    }
+    @include for-tablet {
+      margin-bottom: 30px;
+    }
+    @include for-desktop {
+      margin-bottom: 55px;
+    }
     .slide-content{
       padding: 25px 35px;
       height: 100%;

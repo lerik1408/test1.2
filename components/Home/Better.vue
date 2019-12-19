@@ -202,11 +202,14 @@ section {
       .slide {
         padding-right: 50px;
         box-sizing: padding-box;
+        margin-bottom: 50px;
         @include for-mobile {
           padding: 0 5px;
           display: flex;
           flex-direction: column;
           align-items: center;
+          margin: 10px 0;
+          
         }
         .slider-text {
           position: relative;

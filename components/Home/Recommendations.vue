@@ -65,7 +65,7 @@
         :paginationPadding="4"
         :paginationSize="17"
         :scrollPerPage="true"
-        :perPageCustom="[[300, 1], [700, 2], [1366, 4]]"
+        :perPageCustom="[[300, 1], [700, 2], [1366, 3]]"
       >
       <slide v-for="item in data" :key="item.id" class="slide">
         <div class="slide-padding">

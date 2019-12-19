@@ -13,7 +13,7 @@
         :paginationPadding="4"
         :paginationSize="17"
         :scrollPerPage="true"
-        :perPageCustom="[[300, 1], [700, 2], [1366, 2]]"
+        :perPageCustom="[[300, 2], [700, 2], [1366, 2]]"
       >
         <slide v-for="(item, i) in reviews" :key="i" class="slide">
           <div class="slider-text">
@@ -44,7 +44,6 @@
           <br />
           You may even end up getting banned.
         </p>
-          <!-- <br/> -->
         <p class="info-text">
           With Sprizzy you are safe. We’ve helped 10,000+ brands ainfluencers gain millions of followers.
         </p>
@@ -73,7 +72,7 @@ export default{
           description:'Meaningful engagements',
           user: {
             photo: 'https://www.placecage.com/200/300',
-            message: 'I realy like your content!Keep it up!',
+            message: 'I realy like your content! Keep it up!',
             time: '2 minutes ago',
           }
         },
@@ -91,7 +90,7 @@ export default{
           description:'Meaningful engagements',
           user: {
             photo: 'https://www.placecage.com/200/300',
-            message: 'I realy like your content!Keep it up!',
+            message: 'I realy like your content! Keep it up!',
             time: '2 minutes ago',
           }
         },
@@ -109,7 +108,7 @@ export default{
           description:'Meaningful engagements',
           user: {
             photo: 'https://www.placecage.com/200/300',
-            message: 'I realy like your content!Keep it up!',
+            message: 'I realy like your content! Keep it up!',
             time: '2 minutes ago',
           }
         }
@@ -134,20 +133,31 @@ section {
     width: 100vw;
     height: 500px;
     background-color: #F7FAFD;
-    @include for-desktop{
+    // .VueCarousel-pagination { text-align: left; }
+    @include for-desktop {
       width: 50vw;
+    }
+    @include for-mobile {
+      height: 348px;
     }
     .carousel {
       width: 50%;
       min-width: 600px;
       @include for-mobile {
         min-width: 300px;
-        width: 100%;
+        width: 90%;
       }
       .slide{
         &:nth-child(odd) {
-          .slide-background{
-            background: url("~@/assets/img/BetterBackground/1.png") no-repeat center;
+          @include for-tablet{
+            .slide-background{
+              background: url("~@/assets/img/BetterBackground/1.png") no-repeat center;
+            }
+          }
+          @include for-mobile{
+            .slide-background{
+              background: url("~@/assets/img/BetterBackground/1_mobile.png") no-repeat center;
+            }
           }
           .slider-text {
             &::before {
@@ -164,8 +174,15 @@ section {
           }
         }
         &:nth-child(even) {
-          .slide-background {
-            background: url("~@/assets/img/BetterBackground/2.png") no-repeat center;
+          @include for-tablet{
+            .slide-background {
+              background: url("~@/assets/img/BetterBackground/2.png") no-repeat center;
+            }
+          }
+          @include for-mobile {
+            .slide-background {
+              background: url("~@/assets/img/BetterBackground/2_mobile.png") no-repeat center;
+            }
           }
           .slider-text {
             &::before {
@@ -186,6 +203,7 @@ section {
         padding-right: 50px;
         box-sizing: padding-box;
         @include for-mobile {
+          padding: 0 5px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -197,16 +215,26 @@ section {
           flex-direction: column;
           align-items: center;
           @include for-mobile {
-            width: 250px;
+            width: 166px;
+            align-items: flex-end;
+          }
+          @media screen and (max-width: 384px){
+            width: 100%;
           }
           h3 {
             width: 120px;
             font-weight: 800;
-            font-size: 24px
+            font-size: 24px;
+            @include for-mobile{
+              font-size: 18px;
+            }
           }
           p {
             width: 120px;
             margin-top: 10px;
+            @include for-mobile {
+              font-size: 14px;
+            }
           }
           &::before{
             content: '';
@@ -216,6 +244,12 @@ section {
             display: block;
             width: 18px;
             height: 100px;
+            @include for-mobile {
+              left: 9px;
+            }
+            @media screen and (max-width: 384px){
+              left: 4px;
+            }
           }
         }
         .slide-background {
@@ -227,7 +261,13 @@ section {
           border-radius: 20px;
           background-size: cover;
           @include for-mobile {
-            width: 250px;
+            // width: 100%;
+            background-size: contain;
+            width: 166px;
+            height: 162px;
+          }
+          @media screen and (max-width: 384px){
+            width: 100%;
           }
           .message {
             width: 80%;
@@ -238,24 +278,44 @@ section {
             margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0px 10px 40px rgba(22, 34, 78, 0.06);
+            @include for-mobile {
+              // padding: 10px 10px;
+              padding: 0;
+              padding-left: 7px;
+              align-items: center;
+            }
             .message-photo {
               width: 38px;
               height: 38px;
-              border-radius: 50%
+              border-radius: 50%;
+              @include for-mobile {
+                width: 25px;
+                height: 25px;
+              }
             }
             .message-content{
               display: flex;
               flex-direction: column;
               justify-content: center;
               margin-left: 10px;
-              // flex-basis: 80%;
+              @include for-mobile {
+                display: block;
+                margin-left: 4px;
+              }
               .message-text{
                 font-size: 10px;
-                margin-bottom: 5px
+                margin-bottom: 5px;
+                @include for-mobile {
+                  font-size: 8px;
+                  margin-bottom: 0;
+                }
               }
               .message-time{
                 font-size: 10px;
                 color: #939DB6;
+                @include for-mobile {
+                  font-size: 8px;
+                }
               }
             }
           }
@@ -277,22 +337,30 @@ section {
       min-width: 300px;
     }
     .info-content {
-      width: 460px;
-      @include for-mobile {
-        width: 100%;
-        padding: 20px;
+      width: 100%;
+      padding: 20px;
+      @include for-desktop {
+        width: 460px;
+        padding: 0;
       }
       .info-headline {
         font-size: 36px;
         font-weight: 800;
         color: #282C46;
         margin-bottom: 30px;
+        @include for-mobile {
+          font-size: 24px;
+          margin-bottom: 10px
+        }
       }
       .info-text {
         font-weight: 300;
         font-size: 20px;
         line-height: 184%;
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        @include for-mobile {
+          font-size: 14px;
+        }
       }
       .info-link {
         color: #23D98C;

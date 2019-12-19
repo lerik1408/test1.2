@@ -55,6 +55,9 @@
           alt="tablet with some messages and advertises"
         />
       </div>
+      <router-link class="start-button" to="" tag="div">
+        <p>Start My Video Promotion Now</p>
+      </router-link>
     </section>
   </div>
 </template>
@@ -67,6 +70,38 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.start-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  width: 326px;
+  height: 50px;
+  background-color: #23D98C;
+  border-radius: 8px;
+  @include for-mobile {
+    width: 95%;
+    bottom: 60px;
+    height: 55px;
+    align-self: center;
+  }
+  @include for-tablet {
+    bottom: 100px
+  }
+  @include for-desktop {
+    bottom: 180px;
+    margin-left: 62px;
+  }
+  p {
+    color: #ffffff;
+    font-family: $font-gilroy;
+    font-size: 18px;
+    @include for-mobile {
+      font-weight: 800;
+    }
+  }
+}
 .container {
   background-color: white;
   @include for-desktop {

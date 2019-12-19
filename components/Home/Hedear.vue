@@ -55,9 +55,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.tutorial{
-  flex-basis: 75%;
-}
+// .tutorial{
+//   flex-basis: 75%;
+// }
 h1 {
   color: white;
   font-weight: 900;
@@ -75,6 +75,7 @@ h1 {
 .wrpa {
   @include for-desktop{
     padding-top: 4vh;
+    justify-content: space-around;
     display: flex;
     width: 95vw;
     max-width: 1300px;

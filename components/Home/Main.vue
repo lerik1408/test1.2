@@ -85,6 +85,10 @@
 
     .try-it-now-controls {
         position: relative;
+        @include for-desktop {
+            width: 650px;
+            margin: 0 auto;
+        }
     }
 
     .bright-effect {

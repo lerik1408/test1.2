@@ -4,7 +4,7 @@
       <SearchVideo />
     </div>
 
-    <div v-if="isShowLoginWithGoogle">
+    <div v-if="isShowLoginWithGoogle" class="container">
       <!--cta=1 default-->
       <button
         v-if="googleSignInButtonStyle === 1"
@@ -25,7 +25,7 @@
       </div>
       <!--cta=3-->
       <div v-if="googleSignInButtonStyle === 3">
-        <a @click="onLoginWithGoogle" style="cursor: pointer">
+        <a @click="onLoginWithGoogle" style="cursor: pointer" class="img-3">
           <img
             width="300"
             src="@/assets/img/google_signin_cta3.png"
@@ -41,14 +41,14 @@
         </button>
       </div>
 
-      <div class="search-video-container" v-if="googleSignInButtonStyle !== 4">
+      <div class="search-video-container search" v-if="googleSignInButtonStyle !== 4">
         <a
           v-if="!isShowSearchVideo"
           class="or-search-show-link"
           @click="showSearchVideo"
           >Or search for your video manually.</a
         >
-        <SearchVideo v-if="isShowSearchVideo" />
+        <SearchVideo v-if="isShowSearchVideo"/>
       </div>
 
       <div class="search-video-container" v-if="googleSignInButtonStyle === 4">
@@ -139,7 +139,29 @@ export default {
 .search-video-input {
   color: white;
 }
-
+.search {
+  @include for-tablet{
+    width: auto;
+  }
+  @include for-desktop{
+    position: relative;
+    width: 300px;
+    bottom: 5px;
+  }
+}
+.container {
+  @include for-desktop {
+    display: flex;
+    justify-content: space-around;
+    // align-items: center;
+  }
+  @include for-tablet {
+    // display: block;
+  }
+}
+// .img-3 {
+//   flex-basis: 330px;
+// }
 .google-login {
   max-width: 400px;
   width: 85%;
@@ -198,6 +220,9 @@ export default {
   color: #ffffff;
   margin: 15px 0;
   text-transform: uppercase;
+  @include for-desktop {
+    flex-basis: 50%;
+  }
   @include for-mobile {
     margin: 20px;
   }

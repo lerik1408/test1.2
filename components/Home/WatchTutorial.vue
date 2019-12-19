@@ -7,7 +7,7 @@
         class="sprizzy-video"
         ref="video"
         @click="pauseVideo"
-        poster="@/assets/img/promo_video_thumb.jpg"
+        poster="@/assets/img/promo_video_thumb_new.png"
       >
         <source
           src="/sprizzy_intro_video.mp4"
@@ -89,7 +89,8 @@ export default {
   align-items: center;
   height: 425px;
   @include for-tablet {
-    background: url("~@/assets/img/laptop.png") no-repeat center;
+    // background: url("~@/assets/img/laptop.png") no-repeat center;
+    background: url("~@/assets/img/tablet.png") no-repeat center;
   }
   @include for-desktop {
     margin-top: 50px;
@@ -98,10 +99,13 @@ export default {
 }
 .sprizzy-video {
   @include for-tablet {
-    margin-bottom: 31px;
+    // margin-bottom: 31px;
     margin-right: 7px;
-    width: 542px;
-    height: 344px;
+    // width: 542px;
+    width: 520px;
+    margin-bottom: 10;
+    // height: 344px;
+    height: 323px;
     outline: none;
     background-color: white;
   }
